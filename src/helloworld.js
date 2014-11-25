@@ -3,8 +3,13 @@ function roll(range) {
 }
 
 var MenuEntry = React.createClass({
+	propTypes: {
+		iqty: React.PropTypes.number(),
+		price: React.PropTypes.number(),
+		name: React.PropTypes.string()
+	},
 	getInitialState: function(){
-		return {qty: this.props.qty};
+		return {qty: this.props.iqty};
 	},
 	handleClick: function(e){
 		this.setState({qty: this.state.qty-1});
@@ -23,7 +28,7 @@ var MenuEntry = React.createClass({
 var Menu = React.createClass({
 	render: function() {
 		var items = this.props.items.map(function(item){
-			return <MenuEntry name={item.name} price={item.price} qty={item.iqty} />;
+			return <MenuEntry name={item.name} price={item.price} iqty={item.iqty} />;
 		});
 
 		return (

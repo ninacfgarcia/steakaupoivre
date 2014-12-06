@@ -4,9 +4,9 @@ function roll(range) {
 
 var MenuEntry = React.createClass({
 	propTypes: {
-		iqty: React.PropTypes.number(),
-		price: React.PropTypes.number(),
-		name: React.PropTypes.string()
+		iqty: React.PropTypes.number,
+		price: React.PropTypes.number,
+		name: React.PropTypes.string
 	},
 	getInitialState: function(){
 		return {qty: this.props.iqty};
